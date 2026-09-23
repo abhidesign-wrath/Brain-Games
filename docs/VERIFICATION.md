@@ -22,6 +22,6 @@ Engine foundation and minimal launch screen only. No Day 2 gameplay, production 
 ## Source control
 Repository: https://github.com/abhidesign-wrath/Brain-Games
 
-The existing starter README commit is preserved as the parent of the Day 1 foundation. Command-line Git has read access but no write credential in this workspace. Publishing uses the authenticated GitHub integration, followed by a fetch to synchronize the local checkout. `v0.1-engine` is a local milestone tag unless a remote tag is explicitly confirmed; do not claim a remote tag based only on a local command.
+The existing starter README commit is preserved as the parent of the Day 1 foundation published to `main` at commit `96df1f0`. The final verification notes were synced in a follow-up documentation commit. The `v0.1-engine` milestone tag is local only. CI is configured on push and pull requests; see GitHub Actions for its status.
 
-CI workflow is included to repeat installation, typecheck, lint, tests and Android export on pushes/PRs. Local verification does not imply GitHub Actions has completed.
+CI workflow repeats clean installation, typecheck, lint, tests and Android export on pushes/PRs.
