@@ -84,6 +84,21 @@ npx eas-cli@latest build --platform android --profile production
 
 EAS project ID, account, signing and Play Console setup must be real; no dummy IDs are checked in. A configured profile is not a successful release build. Complete physical-device tests, icon/splash replacement, privacy/support content, current Play policy checks and account-specific closed testing before release. Feature freeze is Day 8; Play approval timing is outside that engineering deadline.
 
+## First installable testing APK
+
+The app uses React Native views, native navigation and the Hermes JavaScript runtime. Gameplay runs in the installed application. React DOM/Web packages satisfy Router's shared dependency tree; they do not turn this Android target into a website or WebView.
+
+Two testing paths are configured:
+
+- **GitHub Actions (available now):** the `Build native Android APK` workflow checks out this repository, runs the checks, generates the native Android project through Expo prebuild and compiles `:app:assembleRelease`. Download its `Mindtrail-APK-<run>` artifact and extract `Mindtrail.apk`. The APK bundles its JavaScript and runs without Metro or Expo Go. It targets arm64 Android phones and x86_64 emulators and uses the Expo template test signing certificate. Use it only for testing. No Expo account is needed for this build path.
+- **EAS preview:** after signing in and connecting the real EAS project, run `npm run build:preview`. This produces a standalone APK. The `development` profile produces an APK that normally needs Metro, so choose `preview` for direct standalone phone testing.
+
+On the phone, download/extract the APK, allow installation from the file manager/browser when Android prompts, and open Mindtrail. Test a second launch in airplane mode. The first foundation APK displays the Day 1 screen only. Allowing an install does not imply gameplay or physical-device testing has been completed.
+
+For Google Play, use `npm run build:production` after Expo/EAS account, package identity and production signing are configured. It produces an **AAB**, which is uploaded to Play Console. Do not upload the test-signed GitHub APK to Play.
+
+The workflow includes `build-info.json`, APK SHA-256, signing certificate output and the merged Android manifest with the artifact. EAS login/project setup is still pending; the configured EAS profiles are not a claim that an EAS cloud build ran.
+
 ## Verification and continuity
 
 See `docs/VERIFICATION.md` for checks actually run and remaining gates, `docs/BUGS.md` for tracked blockers, `docs/DECISIONS.md` for rationale and `docs/HANDOFF.md` for the next task. Run typecheck, lint and tests before each stable milestone, inspect the diff/status, commit and push. Day 2 is intentionally not started.

@@ -43,3 +43,8 @@ Decision: use abhidesign-wrath/Brain-Games and preserve its initial README histo
 Reason: user explicitly requested GitHub backup and this is the accessible matching project repository.
 Alternative rejected: repurposing unrelated projects or leaving the only code copy in this session.
 Future: keep milestones committed and synchronized; record any transport limitations in verification.
+
+## Native APK before Day 2
+Decision: use Expo prebuild and native Gradle on the existing GitHub runner to generate a standalone, test-signed APK while Expo account access is unavailable. Keep EAS preview APK and production AAB profiles.
+Reason: verify the actual native compilation pipeline without fabricating credentials or blocking on account setup.
+Future: production signing and Play AAB remain EAS release gates; generated android files remain ignored and configuration stays in Expo config/plugins. The native release test APK includes Hermes and a bundled JS entry, with no Metro dependency.

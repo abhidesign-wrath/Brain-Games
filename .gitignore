@@ -14,3 +14,4 @@ credentials.json
 .DS_Store
 *.log
 expo-env.d.ts
+artifacts/
