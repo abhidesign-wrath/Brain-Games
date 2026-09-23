@@ -1,0 +1,50 @@
+{
+  "name": "mindtrail",
+  "version": "0.1.0",
+  "main": "expo-router/entry",
+  "dependencies": {
+    "expo": "~57.0.24",
+    "expo-build-properties": "~57.0.21",
+    "expo-constants": "~57.0.19",
+    "expo-dev-client": "~57.0.19",
+    "expo-linking": "~57.0.10",
+    "expo-router": "~57.0.22",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-web": "~0.21.0",
+    "react-native-worklets": "0.10.1"
+  },
+  "devDependencies": {
+    "@testing-library/react-native": "^13",
+    "@types/jest": "^30.0.0",
+    "@types/react": "~19.2.2",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~57.0.2",
+    "jest": "^29.7.0",
+    "jest-expo": "~57.0.5",
+    "react-test-renderer": "19.2.3",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --runInBand --coverage",
+    "verify": "npm run typecheck && npm test",
+    "export:android": "expo export --platform android",
+    "android:native": "expo run:android",
+    "build:preview": "npx eas-cli@latest build --platform android --profile preview",
+    "build:production": "npx eas-cli@latest build --platform android --profile production",
+    "lint": "eslint ."
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

@@ -1,0 +1,1 @@
+module.exports = { preset: 'jest-expo', testMatch: ['**/tests/**/*.test.ts', '**/tests/**/*.test.tsx'], collectCoverageFrom: ['src/games/path/engine/**/*.ts'], coverageThreshold: { global: { branches: 90, functions: 100, lines: 95, statements: 95 } } };

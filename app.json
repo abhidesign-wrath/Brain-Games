@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Mindtrail",
+    "slug": "mindtrail",
+    "scheme": "mindtrail",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "platforms": [
+      "android"
+    ],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36
+          }
+        }
+      ]
+    ],
+    "android": {
+      "package": "com.abhidesignwrath.mindtrail",
+      "versionCode": 1
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
